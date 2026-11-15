@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VCB Network</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav>
+  <div class="logo"><span>V</span> VCB Network</div>
+  <div class="links">
+    <a href="#fitur" data-i18n="nav_security">Keamanan</a>
+    <a href="#node" data-i18n="nav_network">Jaringan</a>
+    <a href="#miners" data-i18n="nav_miners">Miner</a>
+    <a href="#download" data-i18n="nav_download">Download</a>
+    <a href="#invite" data-i18n="nav_invite">Invite</a>
+  </div>
+  <div class="nav-actions">
+    <div class="lang-top">
+      <button onclick="setLang('id')" class="active">ID</button>
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('zh')">中文</button>
+    </div>
+    <a href="#" class="btn-light" data-i18n="nav_login">Masuk</a>
+    <a href="#" class="btn-dark" data-i18n="nav_signup">Buat Akun</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div>
+    <span class="eyebrow">Live Network - 2 Node Aktif</span>
+    <h3>WEBSITE INI DITERBITKAN DALAM TAHAP TESTNET</h3>
+    <h1 data-i18n="hero_title">Aset digital yang tidak bergantung pada satu server.</h1>
+    <p class="lead" data-i18n="hero_desc">VCB adalah jaringan desentralisasi dengan kriptografi pasca-kuantum ML-DSA. Ponsel Anda bisa melakukan penambangan VCB hanya dibatasi 10menit/hari. Komputasi berjalan di node independen yang Anda pilih.</p>
+    <div class="cta-row">
+      <a href="#node" class="btn-dark" data-i18n="hero_cta1">Lihat Jaringan Live</a>
+      <a href="#cara" class="btn-light" data-i18n="hero_cta2">Pelajari Cara Kerja</a>
+    </div>
+  </div>
+
+  <div class="q-card">
+    <div class="q-top"><small>VCB WALLET</small><small>LIVE</small></div>
+    <div class="q-balance">
+      <small data-i18n="wallet_verified">Saldo class=""Terverifikasi - Block #27</small>
+      <h2>12,482.55 VCB</h2>
+      <p data-i18n="wallet_last">Terakhir ditambang di VCB-NODE-</p>
+    </div>
+    <div class="q-grid">
+      <div class="q-mini"><b>00000e1a..</b><span data-i18n="wallet_hash">Hash Terakhir</span></div>
+      <div class="q-mini"><b>342.22 VCB</b><span data-i18n="wallet_reward">Reward Block</span></div>
+      <div class="q-mini"><b>600 detik</b><span data-i18n="wallet_quota">Kuota Harian</span></div>
+      <div class="q-mini"><b>Canonical</b><span data-i18n="wallet_canonical">Encoding Terverifikasi</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><b>#27</b><span data-i18n="stat_block">Block terakhir</span></div>
+  <div class="stat"><b>2 Node</b><span data-i18n="stat_node">Jaringan aktif</span></div>
+  <div class="stat"><b>1.247s</b><span data-i18n="stat_time">Waktu mining rata-rata</span></div>
+  <div class="stat"><b>ML-DSA</b><span data-i18n="stat_nist">Standar NIST PQC</span></div>
+</div>
+
+<section class="section" id="fitur">
+  <h2 data-i18n="feat_title">Keamanan kelas institusi, tanpa server pusat.</h2>
+  <div class="grid3">
+    <div class="feat"><h3 data-i18n="feat1_t">Post-Quantum ML-DSA</h3><p data-i18n="feat1_d">Signature dilindungi algoritma standar NIST yang dirancang tahan terhadap komputer kuantum.</p></div>
+    <div class="feat"><h3 data-i18n="feat2_t">Remote Mining</h3><p data-i18n="feat2_d">Ponsel bisa menambang. Node independen yang menambang atas nama Anda selama 10 menit per hari.</p></div>
+    <div class="feat"><h3 data-i18n="feat3_t">Pindah Node Kapan Saja</h3><p data-i18n="feat3_d">Node penuh atau offline? Aplikasi otomatis pindah ke node lain. Tidak ada lock-in.</p></div>
+  </div>
+</section>
+
+<section class="section" id="invite">
+  <div class="invite-box">
+    <div>
+      <h2 data-i18n="invite_title">Undang Teman, Dapat VCB.</h2>
+      <p data-i18n="invite_desc">Bagikan link kamu. Setiap teman yang daftar dan mining pertama, kamu dapat 5 VCB.</p>
+      <div class="invite-row">
+        <input id="inviteLink" value="https://vcb.network/?ref=VCBT18878ebf0" readonly>
+        <button onclick="copyInvite()" data-i18n="invite_btn">Copy Link</button>
+      </div>
+      <p id="inviteMsg"></p>
+    </div>
+    <div class="invite-count"><div>12</div><span data-i18n="invite_count">Teman sudah join</span></div>
+  </div>
+</section>
+
+<section class="section" id="download">
+  <h2 data-i18n="download_title">Download VCB</h2>
+  <div class="grid2">
+    <div class="feat"><h3 data-i18n="dl_app_t">VCB App - Buat Miner</h3><p data-i18n="dl_app_d">Remote mining, cek saldo, invite teman. Untuk Android & iOS.</p><button class="btn-dark full">Android APK</button></div>
+    <div class="feat"><h3 data-i18n="dl_node_t">VCB Node - Buat Operator</h3><p data-i18n="dl_node_d">Jalankan di laptop / VPS. Jadi bagian dari jaringan.</p><button class="btn-light full">Download node.py</button></div>
+  </div>
+</section>
+
+<section class="section" id="node">
+  <div class="node-head"><h2 data-i18n="node_title">Jaringan Live</h2><span class="live-pill" id="livePill">Menghubungkan...</span></div>
+  <div id="nodesList"></div>
+</section>
+
+<section class="section" id="miners">
+  <h2 data-i18n="miner_title">Miner Live</h2>
+  <div class="table-wrap">
+    <table><thead><tr><th data-i18n="th_miner">Miner</th><th data-i18n="th_block">Block</th><th data-i18n="th_reward">Reward</th><th data-i18n="th_node">Node</th><th data-i18n="th_time">Waktu</th></tr></thead>
+    <tbody id="minerTable"><tr><td colspan="5" data-i18n="miner_loading">Memuat data miner...</td></tr></tbody></table>
+  </div>
+</section>
+
+<section class="section" id="cara">
+  <h2 data-i18n="how_title">Cara kerja dalam 3 langkah</h2>
+  <div class="steps">
+    <div class="step"><b>01</b><h3 data-i18n="step1_t">Buat akun terverifikasi</h3><p data-i18n="step1_d">Daftar dengan email & WhatsApp. Wallet dibuat otomatis.</p></div>
+    <div class="step"><b>02</b><h3 data-i18n="step2_t">Pilih node independen</h3><p data-i18n="step2_d">Pilih berdasarkan lokasi, latensi, dan beban.</p></div>
+    <div class="step"><b>03</b><h3 data-i18n="step3_t">Node bekerja untuk Anda</h3><p data-i18n="step3_d">Node menambang anda. Hasil tercatat di blockchain.</p></div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <h2 data-i18n="faq_title">Pertanyaan umum</h2>
+  <details><summary data-i18n="faq1_q">Apakah ini sentralisasi kalau awalnya cuma 1 node?:root{--bg:#F8F7F4;--ink:#0A1628;--muted:#5B6B82;--line:#E6E1D8;--card:#fff;--navy:#0A1628;--gold:#C5A880;--green:#0E7A5A}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+body{background:var(--bg);color:var(--ink);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+nav{display:flex;justify-content:space-between;align-items:center;padding:14px 6%;background:rgba(248,247,244,.92);position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);gap:12px;flex-wrap:wrap}
+.logo{font-weight:700;font-size:19px;display:flex;align-items:center;gap:10px}
+.logo span{width:32px;height:32px;border-radius:9px;background:var(--navy);color:#fff;display:grid;place-items:center;font-family:'Fraunces',serif;font-size:18px}
+nav .links{display:flex;gap:28px;color:var(--muted);font-size:14px;font-weight:500;flex-wrap:wrap}
+.nav-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.btn-dark{background:var(--navy);color:#fff;padding:10px 18px;border-radius:999px;font-size:14px;font-weight:600;border:none;cursor:pointer}
+.btn-light{border:1px solid var(--line);background:#fff;padding:10px 18px;border-radius:999px;font-size:14px;font-weight:600;cursor:pointer}
+.lang-top{display:flex;gap:4px;background:var(--navy);padding:4px;border-radius:999px}
+.lang-top button{border:none;padding:7px 12px;border-radius:999px;font-weight:700;cursor:pointer;background:transparent;color:#fff;font-size:13px}
+.lang-top button.active{background:#fff;color:#0A1628}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;max-width:1150px;margin:0 auto;padding:56px 6% 30px;align-items:center}
+.eyebrow{display:inline-flex;border:1px solid var(--line);background:#fff;padding:7px 12px;border-radius:999px;font-size:12.5px;font-weight:600}
+h1{font-family:'Fraunces',serif;font-size:clamp(38px,6vw,62px);line-height:1.02;margin:18px 0 16px;font-weight:500}
+.hero p.lead{color:var(--muted);font-size:17px;line-height:1.65;max-width:520px}
+.cta-row{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.q-card{background:var(--navy);color:#fff;border-radius:24px;padding:24px;position:relative;overflow:hidden}
+.q-top{display:flex;justify-content:space-between}
+.q-top small{letter-spacing:.12em;color:#CBD5E1;font-size:11px}
+.q-balance{margin-top:24px}
+.q-balance small{color:#94A3B8;font-size:13px}
+.q-balance h2{font-size:clamp(30px,5vw,44px);margin:6px 0}
+.q-balance p{color:#CBD5E1;font-size:13px}
+.q-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+.q-mini{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:14px}
+.q-mini b{font-size:15px}
+.q-mini span{font-size:12px;color:#CBD5E1;display:block;margin-top:3px}
+.stats{max-width:1150px;margin:18px auto 0;padding:0 6%;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.stat{background:#fff;padding:20px}
+.stat b{font-size:22px}
+.stat span{display:block;color:var(--muted);font-size:13px;margin-top:4px}
+.section{max-width:1150px;margin:0 auto;padding:48px 6%}
+.section h2{font-family:'Fraunces',serif;font-size:clamp(28px,4vw,36px);margin-bottom:20px}
+.grid3,.grid2,.steps{display:grid;gap:16px}
+.grid3,.steps{grid-template-columns:repeat(3,1fr)}
+.grid2{grid-template-columns:1fr 1fr}
+.feat,.step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.feat h3,.step h3{font-size:17px;margin-bottom:8px}
+.feat p,.step p{color:var(--muted);font-size:14px;line-height:1.6}
+.step b{font-family:'Fraunces',serif;font-size:28px;color:var(--gold)}
+.full{width:100%;margin-top:14px;padding:12px}
+.invite-box{background:#0A1628;color:#fff;border-radius:24px;padding:28px;display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:center}
+.invite-box p{color:#CBD5E1;margin:10px 0;line-height:1.6}
+.invite-row{display:flex;gap:8px;flex-wrap:wrap}
+.invite-row input{flex:1;min-width:220px;padding:12px;border-radius:999px;border:none;background:rgba(255,255,255,.12);color:#fff}
+.invite-row button{background:#fff;color:#0A1628;border:none;padding:12px 20px;border-radius:999px;font-weight:700;cursor:pointer}
+.invite-count{text-align:center;background:rgba(255,255,255,.08);border-radius:16px;padding:20px}
+.invite-count div{font-size:36px;font-weight:700}
+.node-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.live-pill{background:#E6F4EF;color:var(--green);padding:6px 12px;border-radius:999px;font-size:13px;font-weight:600}
+#nodesList{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-top:20px}
+.node-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}
+.node-card h3{font-size:16px}
+.node-card small{color:var(--muted)}
+.bar{height:8px;background:#EEE;border-radius:999px;overflow:hidden;margin:14px 0 8px}
+.bar i{display:block;height:100%;background:var(--navy)}
+.node-card button{width:100%;margin-top:14px;padding:11px;border-radius:999px;border:1px solid var(--ink);background:#fff;font-weight:600;cursor:pointer}
+.node-card button.primary{background:var(--navy);color:#fff}
+.table-wrap{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:600px}
+th{text-align:left;padding:14px;background:#F8F7F4}
+td{padding:14px;border-top:1px solid var(--line)}
+details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:12px}
+summary{font-weight:600;cursor:pointer}
+details p{color:var(--muted);margin-top:8px;line-height:1.6}
+footer{border-top:1px solid var(--line);padding:28px 6%;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:var(--muted);font-size:13px;max-width:1150px;margin:0 auto}
+.lang-float{position:fixed;bottom:16px;right:16px;z-index:99;background:#0A1628;color:#fff;border-radius:999px;padding:6px;display:flex;gap:4px}
+.lang-float button{background:transparent;color:#fff;border:none;padding:8px 14px;border-radius:999px;font-weight:600;cursor:pointer}
+#inviteMsg{font-size:13px;color:#5EEAA0}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.grid3,.grid2,.steps{grid-template-columns:1fr}.invite-box{grid-template-columns:1fr}nav .links{display:none}} </summary><p data-i18n="faq1_a">Tidak. Ini fase bootstrap. Protokol VCB terbuka: siapa pun bisa menjalankan node.</p></details>
+  <details><summary data-i18n="faq2_q">Apakah HP dapat menambang langsung?</summary><p data-i18n="faq2_a">HP memang dapat menambang langsung Untuk mematuhi kebijakan Google Play dan menjaga baterai,durasi menambang dibatasi 10 setiap harinya kecuali Laptop, Ipad dan perangkat lainnya 24/7.</p></details>
+  <details><summary data-i18n="faq3_q">Apa itu Canonical Encoding?</summary><p data-i18n="faq3_a">Cara baku menyusun data sebelum di-hash / di-sign. Tanpa ini, urutan key JSON yang berbeda bisa menghasilkan signature berbeda.</p></details>
+</section>
+
+<section class="section">
+  <h2>Segel Filosofi VCB</h2>
+  <p><b>VCB PHILOSOPHY v1.0 - CANONICAL</b><br>
+  <span data-i18n="philo_p1">Prinsip 1: Aset digital yang tidak bergantung pada satu server.</span><br>
+  <span data-i18n="philo_p2">Prinsip 2: Kami mengandalkan komputansi, matematika dan jaringan terbuka, bukan satu perusahaan.</span><br>
+  <span data-i18n="philo_p3">Prinsip 3: Node bekerja pada ponsel, Ipad dan Laptop Anda.</span><br>
+  <span data-i18n="philo_p4">Prinsip 4: Hanya wallet & username publik yang tampil.</span></p>
+  <p style="margin-top:14px"><b>Hash:</b> <span id="philoHash">Menghitung...</span></p>
+</section>
+
+<footer><span>© 2026 VCB Network</span><span>ML-DSA - Canonical Encoding</span></footer>
+
+<script src="app.js"></script>
+</body>
+</html>
